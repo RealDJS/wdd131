@@ -4,5 +4,6 @@
     "editor.indentSize": "tabSize",
     "editor.detectIndentation": true,
     "editor.autoIndent": "advanced",
-    "editor.formatOnPaste": true
+    "editor.formatOnPaste": true,
+    "liveServer.settings.port": 5501
 }
