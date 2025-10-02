@@ -11,8 +11,12 @@
 
 /* Body */
 body {
+   background-color: var(--text-light);
    font-family: var(--primary-font);
    margin: 0;
+}
+.content {
+   width: auto;
 }
 
 /* Header */
@@ -68,14 +72,16 @@ header h3 {
 }
 
 /* Main */
+main {
+   padding: 2rem;
+}
 
 /* Gallery */
-
 main h2 {
-   padding: 0rem;
    margin: 2.5rem 0rem;
    font-size: 2.2rem;
    font-weight: 600;
+   text-align: center;
 }
 
 .gallery {
@@ -84,52 +90,77 @@ main h2 {
    justify-items: center;
    margin: 0;
    padding: 0;
+   gap: 0 0.5rem;
 }
 
 figure {
    margin: 0;
-   padding: 0rem 2rem;
    padding-bottom: 2.5rem;
+   padding: 1rem 2rem;
    align-items: center;
 }
 
 img {
    max-width: 100%;
-   height: 250px;
-   width: 250px;
+   height: 200px;
+   width: 200px;
    object-fit: cover;
-   border: 0.5rem solid var(--text-light);
-   box-shadow: 5px 5px 2px var(--text-dark);
+   border: 0.5rem solid white;
+   box-shadow: 4px 4px 8px var(--text-dark);
 }
 
 @media screen and (min-width: 700px) {
+   /*Headline*/
    h1 {
       max-width: none;
    }
+   main h2 {
+      margin: 1rem 0rem;
+   }
+
+   /* Menu */
+   header nav {
+      display: none;
+   }
+
+   /* Gallery */
    .gallery {
       grid-template-columns: 1fr 1fr;
       max-width: 700px;
-      column-gap: 2rem;
       margin: 0 auto;
    }
 }
 
 @media screen and (min-width: 1000px) {
-   .gallery {
-      grid-template-columns: 1fr 1fr 1fr;
-      max-width: 1000px;
-      margin: 0 auto;
-   }
+   /* Menu */
    .menu {
       display: none;
    }
 
-   .main {
+   /* Main */
+   main {
       max-width: 1080px;
+      padding: 1rem auto;
+      margin: 0 auto;
    }
    header nav {
       display: flex;
       gap: 7.5rem;
+   }
+
+   /* Gallery Title */
+   main h2 {
+      margin: 0;
+      margin-bottom: 0.3rem;
+   }
+
+   /* Gallery */
+   .gallery {
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width: 800px;
+   }
+   figure {
+      padding: 1rem 0.5rem;
    }
 }
 
@@ -138,4 +169,6 @@ footer {
    background-color: var(--primary-color);
    color: var(--text-light);
    padding: 3rem;
+   margin-bottom: 0;
+   text-align: center;
 }
