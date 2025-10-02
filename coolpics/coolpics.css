@@ -15,23 +15,82 @@ body {
    margin: 0;
 }
 
+/* Header */
 header {
+   display: grid;
+   justify-items: center;
+   grid-template-columns: 1fr;
    background: var(--primary-color);
    color: var(--text-light);
-   align-items: center;
+   padding: 1.5rem 2rem;
 }
 
+h1,
+h2,
+h3 {
+   text-align: center;
+   margin: 0rem;
+}
+
+/* Headline */
+h1 {
+   max-width: 225px;
+   font-family: var(--secondary-font);
+   font-size: 4rem;
+   font-weight: 400;
+   margin: 0.5rem;
+   line-height: 115%;
+   word-spacing: -0.15ch;
+   letter-spacing: -0.01ch;
+}
+
+/* Menu */
 .menu {
    background: none;
    border: none;
    padding: 0;
-   margin: 0;
+   margin-top: 1rem;
    color: var(--text-light);
-   align-items: center;
 }
 
-h1 {
-   font-family: var(--secondary-font);
+.menu h2 {
+   font-size: 2.2rem;
+   font-weight: 400;
+}
+
+/* Menu Items */
+header h3 {
+   text-decoration: underline;
+   font-size: 1.5rem;
+   font-weight: 400;
+   padding: 0.3rem;
+   margin: 0;
+}
+
+/* Main */
+
+/* Gallery */
+
+main h2 {
+   padding: 0rem;
+   margin: 2.5rem 0rem;
+   font-size: 2.2rem;
+   font-weight: 600;
+}
+
+.gallery {
+   display: grid;
+   grid-template-columns: 1fr;
+   justify-items: center;
+   margin: 0;
+   padding: 0;
+}
+
+figure {
+   margin: 0;
+   padding: 0rem 2rem;
+   padding-bottom: 2.5rem;
+   align-items: center;
 }
 
 img {
@@ -39,10 +98,44 @@ img {
    height: 250px;
    width: 250px;
    object-fit: cover;
+   border: 0.5rem solid var(--text-light);
+   box-shadow: 5px 5px 2px var(--text-dark);
 }
 
-h1,
-h2,
-h3 {
-   text-align: center;
+@media screen and (min-width: 700px) {
+   h1 {
+      max-width: none;
+   }
+   .gallery {
+      grid-template-columns: 1fr 1fr;
+      max-width: 700px;
+      column-gap: 2rem;
+      margin: 0 auto;
+   }
+}
+
+@media screen and (min-width: 1000px) {
+   .gallery {
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width: 1000px;
+      margin: 0 auto;
+   }
+   .menu {
+      display: none;
+   }
+
+   .main {
+      max-width: 1080px;
+   }
+   header nav {
+      display: flex;
+      gap: 7.5rem;
+   }
+}
+
+/* Footer */
+footer {
+   background-color: var(--primary-color);
+   color: var(--text-light);
+   padding: 3rem;
 }
