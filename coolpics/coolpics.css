@@ -206,7 +206,8 @@ footer {
 
 .image-container {
    position: relative; /* positions the close button */
-   margin: 20vh auto; /* keeps the container from top and centered */
+   margin: 1vh auto 0; /* keeps the container from top and centered */
+
    width: fit-content; /* Container size matches image */
    max-width: 90%; /* avoid touching screen edges */
    line-height: 0; /* removes extra space that'll misalign close button */
