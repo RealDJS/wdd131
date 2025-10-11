@@ -106,7 +106,7 @@ figure {
    align-items: center;
 }
 
-img {
+figure img {
    max-width: 100%;
    height: 200px;
    width: 200px;
@@ -178,4 +178,53 @@ footer {
       height: 200px;
       width: 200px;
    }
+}
+
+/* MODAL */
+
+.viewer {
+   /* fill the entire screen */
+   width: 100%;
+   height: 100%;
+
+   position: fixed; /* Keep in place */
+   top: 0;
+   left: 0;
+   border: none;
+   background: transparent; /* clear dialog box */
+   z-index: 10; /* stays above content */
+
+   /* center the image inside */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.viewer::backdrop {
+   background-color: rgba(0, 0, 0, 0.6); /* make backdrop black*/
+}
+
+.image-container {
+   width: 90%;
+}
+
+.viewer img {
+   margin: 20vh auto;
+   /*position: center;*/
+   /*top: 20vh;*/
+   width: 100%;
+   max-height: 100%;
+}
+
+/* x button */
+.close-viewer {
+   position: absolute;
+
+   /*near the top right corner*/
+   top: 20vh;
+   width: 20px;
+   height: 20px;
+
+   /*make it clickable */
+   cursor: pointer;
 }
