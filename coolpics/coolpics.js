@@ -27,17 +27,17 @@ function viewHandler(event) {
       const clickedImageSrc = event.target.getAttribute("src");
       const largeImageSrc = clickedImageSrc.replace("-sm", "-full");
       const altText = event.target.getAttribute("alt");
-      buildViewer(largeImageSrc, altText);
+      viewerTemplate(largeImageSrc, altText);
    }
 }
 
-function buildViewer(src, alt) {
+function viewerTemplate(src, alt) {
    //dialog element
    const html = `
    <dialog class="viewer">
       <div class="image-container">
-         <img src="${src}" alt="${alt}">
          <button class="close-viewer" data-action="close">X</button>
+         <img src="${src}" alt="${alt}">
       </div>
    </dialog>
    `;
