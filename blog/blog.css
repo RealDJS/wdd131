@@ -1,15 +1,59 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
+/* CONSTANTS */
 :root {
    --primary-color: #efc69b;
-   /*--text-light: #ebebeb;*/
    --text-dark: #473144;
    --header-color: #af1b3f;
    --body-font: Arial, Helvetica, sans-serif;
    --headline-font: "Lora", Impact, serif;
 }
 
+/* HEADER */
+h1 {
+   font-family: var(--headline-font);
+   font-weight: 500;
+}
+
+.menu {
+   justify-content: end;
+   justify-items: end;
+}
+
+nav > ul {
+   display: grid;
+   grid-template-columns: 80px 100px 80px;
+   list-style-type: none;
+   padding-left: 0;
+}
+
+nav a {
+   text-decoration: none;
+   color: var(--header-color);
+   font-weight: 600;
+}
+
+/* REVIEW HEADERS */
+ul,
 h2 {
    font-family: var(--headline-font);
    color: var(--header-color);
+}
+
+/* MAIN */
+main {
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+}
+
+/* REVIEWS */
+article {
+   display: grid;
+   grid-template-columns: 1fr 2fr;
+}
+
+/* REVIEW TEXT */
+p,
+time {
+   font-family: var(--body-font);
 }
