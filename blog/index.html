@@ -13,7 +13,13 @@
    <body>
       <div class="content">
          <header>
+            <!-- jump to content -->
+            <div class="skiptocontent">
+               <a href="#maincontent"> skip to main content</a>
+            </div>
+            <!-- Title -->
             <h1>Kids Read For Fun</h1>
+            <!-- Menu -->
             <nav class="menu">
                <ul>
                   <li><a href="#">About</a></li>
@@ -23,7 +29,7 @@
             </nav>
          </header>
 
-         <main>
+         <main id="maincontent" tabindex="-1">
             <section class="reviews">
                <article>
                   <div class="review meta-data">
@@ -34,9 +40,9 @@
                   </div>
 
                   <div class="review-content">
-                     <h2 class="book name">Septimus Heap Book One: Magyk</h2>
+                     <h2 class="book-name">Septimus Heap Book One: Magyk</h2>
                      <img
-                        src="#"
+                        src="images/magyk.jpg"
                         alt="cover for Septimus Heap Book One: Magyk"
                      />
                      <p class="summary">
@@ -48,7 +54,7 @@
                </article>
 
                <article>
-                  <div class="review meta-data">
+                  <div class="review-meta-data">
                      <time datetime="2021-12-12">December 12, 2021</time>
                      <p class="age">12-16</p>
                      <p class="genre">Fantasy</p>
@@ -56,11 +62,11 @@
                   </div>
 
                   <div class="review-content">
-                     <h2 class="book name">
+                     <h2 class="book-name">
                         Magnus Chase Book One: Sword of Summer
                      </h2>
                      <img
-                        src="#"
+                        src="images/sword_of_summer.jpg"
                         alt="cover for Magnus Chase Book One: Sword of Summer"
                      />
                      <p class="summary">
