@@ -12,8 +12,10 @@
 /* ****** BODY ****** */
 
 body {
-   max-width: auto;
    font-family: var(--body-font);
+   color: var(--text-dark);
+   font-size: 0.8rem;
+   margin: 0;
 }
 
 /* ****** HEADER ****** */
@@ -24,8 +26,8 @@ body {
    top: -40px;
    text-decoration: none;
    font-size: large;
-   color: white;
-   background-color: #cc5a76;
+   color: black;
+   background-color: var(--primary-color);
 }
 
 .skiptocontent a:focus {
@@ -37,14 +39,15 @@ body {
 h1 {
    text-align: center;
    font-family: var(--headline-font);
-   font-weight: 500;
-   margin: 2rem;
+   font-size: 2rem;
+   font-weight: 600;
+   margin: 2rem 0;
 }
 
 /* *** MENU *** */
 .menu {
-   border-top: solid var(--primary-color);
-   border-bottom: solid var(--primary-color);
+   border-top: 1px solid var(--primary-color);
+   border-bottom: 1px solid var(--primary-color);
    margin: 0 auto;
 }
 
@@ -52,20 +55,22 @@ h1 {
    justify-self: end;
 }
 
-nav > ul {
+nav ul {
    display: grid;
-   grid-template-columns: 80px 100px 80px;
+   grid-template-columns: 3.2rem 3.8rem 5.8rem;
    list-style-type: none;
    padding-left: 0;
+   margin: 0.8rem 0.9rem;
 }
 
 nav a {
+   font-size: 0.8rem;
    text-decoration: none;
    color: var(--header-color);
    font-weight: 600;
 }
 
-/* MENU & REVIEW TITLES */
+/* REVIEW HEADERS */
 ul,
 h2 {
    font-family: var(--headline-font);
@@ -77,13 +82,19 @@ main {
    margin: 1rem 0;
    display: grid;
    grid-template-columns: 3fr 1fr;
+   gap: 0.1rem;
 }
 
 /* *** REVIEWS *** */
+/*.reviews {
+   padding: 0rem 2rem;
+}*/
+
 article {
    display: grid;
    grid-template-columns: 1fr 3fr;
-   padding-bottom: 3rem;
+   padding-bottom: 1rem;
+   gap: 0.5rem;
 }
 
 .book-name {
@@ -91,13 +102,43 @@ article {
    margin-bottom: 1rem;
 }
 
+.review-meta-data {
+   border-right: solid 1px var(--primary-color);
+   padding: 0.5rem;
+   width: 140px;
+   text-align: right;
+}
+
+.review-meta-data > p {
+   margin: 0.5rem;
+}
+
+.review-content {
+   padding: 0.5rem;
+   display: flex;
+   flex-direction: column;
+   width: fit-content;
+   align-items: left;
+}
+
 .review-content img {
-   max-width: 200px;
-   margin: 0 2rem;
+   max-width: 10rem;
+   margin: 0;
+   align-self: center;
 }
 
 /* *** FILTER FORM *** */
-main > p {
-   margin: 0;
+.filter {
+   font-size: 0.7rem;
+   align-self: start;
+   margin: 1rem;
+   padding: 0.5rem 0;
+   margin-top: 0.4rem;
+   margin-right: 3rem;
+   margin-left: 0rem;
+   border: 1px solid var(--primary-color);
+   box-sizing: border-box;
    justify-self: center;
+   width: 10rem;
+   height: 40rem;
 }
