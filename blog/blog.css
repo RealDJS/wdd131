@@ -100,7 +100,7 @@ article {
 .book-name {
    margin: 0;
    margin-bottom: 1rem;
-   font-size: 1.3rem; /*take out*/
+   font-size: 1.25rem; /*take out*/
 }
 
 .review-meta-data {
@@ -130,7 +130,7 @@ article {
 
 .review-content img {
    /*max-width: 10rem;*/
-   max-width: 10.2rem;
+   max-width: 10.7rem;
    margin: 0;
    /*padding-left: 1.5rem;*/
    padding-left: 1.6rem;
