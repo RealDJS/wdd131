@@ -39,8 +39,7 @@ body {
 h1 {
    text-align: center;
    font-family: var(--headline-font);
-   font-size: 2rem;
-   /*font-size: 1.9rem;*/
+   /*font-size: 2rem;*/
    font-weight: 600;
    margin: 2rem 0;
 }
@@ -58,20 +57,17 @@ h1 {
 
 nav ul {
    display: grid;
-   /*grid-template-columns: 3.2rem 3.8rem 5.8rem;*/
-   grid-template-columns: 3.5rem 4.5rem 5.8rem;
+   grid-template-columns: 3.2rem 3.8rem 5.8rem;
    list-style-type: none;
    padding-left: 0;
    margin: 0.8rem 0.9rem;
 }
 
 nav a {
-   font-size: 0.9rem;
-   /*font-size: 0.8rem;*/
+   font-size: 0.8rem;
    text-decoration: none;
    color: var(--header-color);
-   /*font-weight: 600;*/
-   font-weight: 500;
+   font-weight: 600;
 }
 
 /* REVIEW HEADERS */
@@ -83,7 +79,7 @@ h2 {
 
 /* ****** MAIN ****** */
 main {
-   /*margin: 1rem 0;*/
+   margin: 1rem 0;
    display: grid;
    grid-template-columns: 3fr 1fr;
    gap: 0.1rem;
@@ -100,27 +96,26 @@ article {
 .book-name {
    margin: 0;
    margin-bottom: 1rem;
-   font-size: 1.25rem; /*take out*/
 }
 
 .review-meta-data {
-   /*border-right: solid 1px var(--primary-color);*/
-   /*padding: 0.5rem;*/
+   border-right: solid 1px var(--primary-color);
+   padding: 0.5rem;
    width: 140px;
-   /*text-align: right;*/
-   /*font-size: 0.6rem;*/
+   text-align: right;
+   font-size: 0.6rem;
 }
 
-/*time {
+time {
    font-size: 0.7rem;
-}*/
+}
 
-/*.review-meta-data > p {
+.review-meta-data > p {
    margin: 0.5rem;
-}*/
+}
 
 .review-content {
-   /*padding: 0.5rem;*/
+   padding: 0.5rem;
    padding-top: 1rem;
    display: flex;
    flex-direction: column;
@@ -129,29 +124,26 @@ article {
 }
 
 .review-content img {
-   /*max-width: 10rem;*/
+   max-width: 10rem;
    max-width: 10.7rem;
    margin: 0;
-   /*padding-left: 1.5rem;*/
+   padding-left: 1.5rem;
    padding-left: 1.6rem;
-   /*align-self: center;*/
+   align-self: center;
 }
 
 /* *** FILTER FORM *** */
 .filter {
-   /*font-size: 0.7rem;*/
-   font-size: 0.8rem;
-   /*align-self: start;*/
-   /*margin: 1rem;*/
-   margin: 0.4rem;
-   /*padding: 0.5rem 0;*/
+   font-size: 0.7rem;
+   align-self: start;
+   margin: 1rem;
    padding: 0.5rem 0;
-   /*margin-top: 0.4rem;*/
+   margin-top: 0.4rem;
    margin-right: 3rem;
    margin-left: 0rem;
-   /*border: 1px solid var(--primary-color);*/
+   border: 1px solid var(--primary-color);
    box-sizing: border-box;
-   /*justify-self: center;*/
+   justify-self: center;
    width: 10rem;
-   /*height: 40rem;*/
+   height: 40rem;
 }
