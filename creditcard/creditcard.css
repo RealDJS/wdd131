@@ -11,15 +11,18 @@ body {
 /******** cardContainer ********/
 #cardContainer {
    display: grid;
-   grid-template-columns: 1fr 3fr 1fr;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto auto;
+   gap: 20px;
    width: 40rem;
-   gap: 100px;
+   justify-items: center;
 }
 
 /* cardFront */
-
 #cardFront {
-   grid-column: 1 / span 2;
+   grid-column: 1 / span 1;
+   grid-row: 1 / span 1;
+   z-index: 2;
    display: grid;
    grid-template-columns: 2fr 1fr;
    gap: 1rem;
@@ -28,6 +31,7 @@ body {
    width: 300px;
    padding: 1.5rem;
    border-radius: 15px;
+   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 #totalDisplay {
@@ -69,7 +73,6 @@ body {
    grid-column: 1 / span 1;
    display: grid;
    grid-template-columns: 1fr;
-   /*padding:1rem;*/
 }
 
 #cardHold {
@@ -86,7 +89,6 @@ body {
    grid-column: 2 / span 1;
    display: grid;
    grid-template-columns: 1fr;
-   /*gap: 0.5rem;*/
 }
 
 #cardDate label {
@@ -111,10 +113,49 @@ body {
 
 /* CARD BACK */
 #cardBack {
+   grid-column: 1 / span 1;
+   grid-row: 1 / span 1;
+   z-index: 1;
+   margin-top: 2rem;
+   margin-left: 13rem;
    background-color: #f0f0f0;
    height: 200px;
    width: 300px;
    border-radius: 15px;
    padding: 1.5rem;
-   grid-column: 2 / span 2;
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+#magStripe {
+   background-color: #333;
+   height: 40px;
+   grid-column: 1 / span 2;
+   margin-left: -1.5rem;
+   margin-right: -1.5rem;
+}
+
+#security {
+   grid-row: 2 / span 1;
+   grid-column: 2 / span 1;
+   align-self: end;
+   display: grid;
+   grid-template-columns: 1fr;
+}
+
+#security label {
+   text-align: Right;
+}
+
+#CCV {
+   justify-self: end;
+   width: 4rem;
+   box-sizing: border-box;
+}
+
+/* Submit Button */
+#cardContainer button {
+   grid-row: 2 / span 1;
+   width: 4rem;
 }

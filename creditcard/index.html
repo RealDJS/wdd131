@@ -27,7 +27,9 @@
                      type="text"
                      id="cardNumber"
                      name="cardNumber"
+                     pattern="[0-9]{16}"
                      placeholder="0100 0011 0010 0001"
+                     required
                   />
                </div>
 
@@ -38,6 +40,7 @@
                      id="cardHolder"
                      name="cardHolder"
                      placeholder="e.g. Card Owner"
+                     required
                   />
                </div>
 
@@ -48,15 +51,19 @@
                         type="text"
                         id="cardMonth"
                         name="cardMonth"
+                        pattern="[0-9]{2}"
                         placeholder="MM"
                         length="2"
+                        required
                      />
                      <input
                         type="text"
                         id="cardYear"
                         name="cardYear"
+                        pattern="[0-9]{2}"
                         placeholder="YY"
                         length="2"
+                        required
                      />
                   </div>
                </div>
@@ -65,16 +72,20 @@
 
             <!-- cardBack -->
             <div id="cardBack">
-               <label for="cardCCV">CCV/CVV</label>
-               <input
-                  type="text"
-                  name="cardMonth"
-                  id="cardMonth"
-                  placeholder="MM"
-                  length="2"
-               />
+               <div id="magStripe"></div>
 
-               <p>Last 3 or 4 digits</p>
+               <div id="security">
+                  <label for="CCV">CCV/CVV</label>
+                  <input
+                     type="text"
+                     name="CCV"
+                     id="CCV"
+                     pattern="[0-9]{3}"
+                     placeholder="xxx"
+                     length="3"
+                     required
+                  />
+               </div>
             </div>
             <!-- end cardBack -->
 
