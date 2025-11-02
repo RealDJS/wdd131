@@ -17,8 +17,7 @@ body {
    width: 40rem;
    justify-items: center;
 }
-
-/* cardFront */
+/********* cardFront************/
 #cardFront {
    grid-column: 1 / span 1;
    grid-row: 1 / span 1;
@@ -75,11 +74,6 @@ body {
    grid-template-columns: 1fr;
 }
 
-#cardHold {
-   grid-column: 1 / span 1;
-   display: grid;
-}
-
 #cardHold label {
    grid-column: 1 / span 1;
 }
@@ -111,7 +105,7 @@ body {
    box-sizing: border-box;
 }
 
-/* CARD BACK */
+/********* cardBack ************/
 #cardBack {
    grid-column: 1 / span 1;
    grid-row: 1 / span 1;
@@ -145,7 +139,7 @@ body {
 }
 
 #security label {
-   text-align: Right;
+   text-align: right;
 }
 
 #CCV {
