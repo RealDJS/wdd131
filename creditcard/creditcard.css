@@ -1,0 +1,120 @@
+body {
+   font-family: "Courier New", monospace;
+
+   display: grid;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   margin: 0;
+}
+
+/******** cardContainer ********/
+#cardContainer {
+   display: grid;
+   grid-template-columns: 1fr 3fr 1fr;
+   width: 40rem;
+   gap: 100px;
+}
+
+/* cardFront */
+
+#cardFront {
+   grid-column: 1 / span 2;
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   gap: 1rem;
+   background-color: #f0f0f0;
+   height: 200px;
+   width: 300px;
+   padding: 1.5rem;
+   border-radius: 15px;
+}
+
+#totalDisplay {
+   grid-column: 1 / span 1;
+   display: grid;
+   grid-template-columns: auto 1fr;
+   align-items: center;
+}
+
+.cardChip {
+   grid-column: 2 / span 1;
+   justify-self: end;
+}
+
+#cardTotal {
+   grid-column: 2 / span 1;
+   padding: 1rem;
+}
+
+/* CARD NUMBER */
+#cardNum {
+   grid-column: 1 / span 2;
+   display: grid;
+   grid-template-columns: 1fr;
+}
+
+#cardNum label {
+   grid-column: 1 / span 1;
+}
+
+#cardNumber {
+   grid-column: 1 / span 1;
+   padding: 0.25rem;
+   width: 18rem;
+}
+
+/* CARD HOLDER */
+#cardHold {
+   grid-column: 1 / span 1;
+   display: grid;
+   grid-template-columns: 1fr;
+   /*padding:1rem;*/
+}
+
+#cardHold {
+   grid-column: 1 / span 1;
+   display: grid;
+}
+
+#cardHold label {
+   grid-column: 1 / span 1;
+}
+
+/* CARD EXPIRATION */
+#cardDate {
+   grid-column: 2 / span 1;
+   display: grid;
+   grid-template-columns: 1fr;
+   /*gap: 0.5rem;*/
+}
+
+#cardDate label {
+   text-align: center;
+}
+
+#date {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 5px;
+}
+
+#cardMonth {
+   width: 100%;
+   box-sizing: border-box;
+}
+
+#cardYear {
+   width: 100%;
+   box-sizing: border-box;
+}
+
+/* CARD BACK */
+#cardBack {
+   background-color: #f0f0f0;
+   height: 200px;
+   width: 300px;
+   border-radius: 15px;
+   padding: 1.5rem;
+   grid-column: 2 / span 2;
+}
