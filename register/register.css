@@ -27,6 +27,12 @@ p {
    max-width: 960px;
    margin: 0 auto;
 }
+
+/*******************************/
+/********** FORM ***************/
+/*******************************/
+
+/* FORMAT */
 form {
    padding: 20px;
    border-radius: 6px;
@@ -36,6 +42,11 @@ form {
 fieldset {
    margin-bottom: 2em;
 }
+
+/*******************************/
+/******** PARTICIPANT **********/
+/*******************************/
+
 input,
 select,
 textarea {
@@ -80,6 +91,9 @@ input:hover::placeholder {
    color: red;
 }
 
+/*******************************/
+/********** CONTACT ************/
+/*******************************/
 .columns {
    display: flex;
    justify-content: space-between;
@@ -135,11 +149,17 @@ label.radio:after {
 input[type="radio"]:checked + label:after {
    opacity: 1;
 }
+
+/*******************************/
+/********** SUBMIT *************/
+/*******************************/
 /* end style checkbox and radio */
 .btn-block {
    margin-top: 10px;
    text-align: center;
 }
+
+/********** BUTTONS ************/
 button {
    width: 150px;
    padding: 10px;
