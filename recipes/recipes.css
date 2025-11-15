@@ -96,8 +96,10 @@ header a img {
 
 .recipeContainer {
    /* layout */
-   align-items: center;
+   display: flex;
+   flex-direction: column;
    padding: 1rem;
+   gap: 0.3rem;
 
    /* style */
    border: 1px solid black;
@@ -149,12 +151,12 @@ header a img {
 /*************************************************************/
 
 footer {
-   padding-top: 3rem;
+   padding: 3rem 0;
 }
 
 .social {
    display: flex;
-   flex-direction: column; /* Stacks attribution and icon group */
+   flex-direction: column;
    align-items: center;
    gap: 0.3rem;
 }
@@ -181,16 +183,20 @@ footer {
 
 /* Width 1 */
 @media (min-width: 600px) {
-   /* Recipe Container */
    .recipeContainer {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      flex-direction: row;
       gap: 1.5rem;
       align-items: start;
    }
 
+   .recipeImg {
+      flex: 1;
+      min-width: 0;
+   }
+
    .recipeInfo {
-      padding-top: 0; /* Remove extra padding */
+      flex: 1;
+      padding-top: 0;
    }
 
    .rating {
@@ -220,6 +226,6 @@ footer {
 /* Width 2 */
 @media (min-width: 960px) {
    .content {
-      max-width: 960px; /* cap width */
+      max-width: 960px;
    }
 }
