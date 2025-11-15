@@ -7,6 +7,18 @@
       <meta name="author" content="Dennis Skoy" />
       <link rel="stylesheet" href="recipes.css" />
       <script src="recipes.js" defer></script>
+      <meta property="og:title" content="RecipeBook" />
+      <meta property="og:type" content="website" />
+      <meta
+         property="og:description"
+         content="A collection of recipes, their ratings, and instructions."
+      />
+      <meta property="og:image" content="images/search.svg" />
+      <meta
+         property="og:url"
+         content="https://realdjs.github.io/wdd131/recipes/index.html"
+      />
+      <meta name="twitter:card" content="summary_large_image" />
    </head>
 
    <!-- SITE CONTENT -->
@@ -14,35 +26,81 @@
       <div class="content">
          <!--------------------------HEADER-------------------------------------------------------->
          <header>
-            <a href="#"
-               ><img src="images/recipe-book.png" alt="recipe book logo" />
-            </a>
-            <h1>RecipeBook</h1>
+            <div class="logo">
+               <a href="#"
+                  ><img src="images/recipe-book.png" alt="recipe book logo" />
+               </a>
+               <h1>RecipeBook</h1>
+            </div>
+
+            <!-- searchBar -->
+            <form id="searchBar">
+               <div id="searchContainer">
+                  <input
+                     type="text"
+                     id="searchText"
+                     name="searchText"
+                     placeholder="Find a recipe"
+                  />
+                  <button type="submit">
+                     <img src="images/search.svg" alt="Search" />
+                  </button>
+               </div>
+            </form>
          </header>
          <!--------------------------MAIN---------------------------------------------------------->
-         <main></main>
+         <main>
+            <!---------------------- Recipe --------------------->
+            <div class="recipeContainer">
+               <!-- Recipe Img -->
+               <img class="recipeImg" src="images/apple-crisp.jpg" />
+
+               <!-- Recipe info -->
+               <div class="recipeInfo">
+                  <div class="tags">dessert</div>
+                  <h2 class="recipeName">Apple Crisp</h2>
+                  <span
+                     class="rating"
+                     role="img"
+                     aria-label="Rating: 4 out of 5 stars"
+                  >
+                     <span aria-hidden="true" class="icon-star">⭐</span>
+                     <span aria-hidden="true" class="icon-star">⭐</span>
+                     <span aria-hidden="true" class="icon-star">⭐</span>
+                     <span aria-hidden="true" class="icon-star-empty">⭐</span>
+                     <span aria-hidden="true" class="icon-star-empty">☆</span>
+                  </span>
+                  <p class="recipeDescription">
+                     This apple crisp recipe is a simple yet delicious fall
+                     dessert that's great served warm with vanilla ice cream.
+                  </p>
+               </div>
+            </div>
+         </main>
 
          <!--------------------------FOOTER-------------------------------------------------------->
          <footer>
+            <!--Credit flaticon  -->
             <div class="social">
-               <!--Credit Flaticon  -->
+               <div class="social-icons">
+                  <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
+                  <a href="#"
+                     ><img src="images/instagram_icon.svg" alt="instagram icon"
+                  /></a>
+
+                  <a href="#"
+                     ><img src="images/youtube_icon.svg" alt="youtube icon"
+                  /></a>
+                  <a href="#"
+                     ><img src="images/pinterest_icon.svg" alt="pinterest icon"
+                  /></a>
+               </div>
                <a
                   href="https://www.flaticon.com/free-icons/recipe"
                   title="recipe icons"
+                  class="attribution"
                   >Recipe icons created by Freepik - Flaticon</a
                >
-
-               <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
-               <a href="#"
-                  ><img src="images/instagram_icon.svg" alt="instagram icon"
-               /></a>
-
-               <a href="#"
-                  ><img src="images/youtube_icon.svg" alt="youtube icon"
-               /></a>
-               <a href="#"
-                  ><img src="images/pinterest_icon.svg" alt="pinterest icon"
-               /></a>
             </div>
          </footer>
       </div>
