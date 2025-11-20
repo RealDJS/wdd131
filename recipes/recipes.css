@@ -55,7 +55,7 @@ header a img {
 /********* Search Bar *********/
 #searchBar {
    width: 100%;
-   padding: 0.2rem 0;
+   padding: 0rem 0;
 }
 
 #searchContainer {
@@ -63,7 +63,10 @@ header a img {
    display: flex;
    overflow: hidden;
    border: 2px solid #777;
-   border-radius: 4px;
+   border-radius: 6px;
+   /* display */
+   height: 2.2rem;
+   align-items: center;
 }
 
 #searchText {
@@ -71,7 +74,7 @@ header a img {
    border: none;
    outline: none;
    padding: 0rem 0.3rem;
-   font-size: 1.3rem;
+   font-size: 1.1rem;
 }
 
 #searchText::placeholder {
@@ -86,7 +89,7 @@ header a img {
 }
 
 #searchBar button img {
-   width: 2rem;
+   width: 1.8rem;
    display: block;
 }
 
@@ -96,9 +99,11 @@ header a img {
 
 .recipe {
    /* layout */
+
    display: flex;
    flex-direction: column;
    padding: 1rem;
+   margin: 0;
    gap: 0.3rem;
 
    /* style */
