@@ -105,31 +105,112 @@ function ratingTemplate(rating) {
 }
 
 /**************************************************************************
+ *************************** SEARCHING ************************************
+ *************************************************************************/
+
+/********************************************************************
+ * FILTER LIST
+ * @param {*} recipes list of recipes
+ * @param {*} query   what the user is searching for
+ * @returns   collection with matches in tags, name, or ingredients
+ *******************************************************************/
+function filterList(query) {
+   return recipes.filter((recipe) => {
+      const nameFound = recipe.name.toLowerCase().includes(query);
+      const tagFound = recipe.tags.find((tag) =>
+         tag.toLowerCase().includes(query)
+      );
+      const ingredientFound = recipe.recipeIngredient.find((ingredient) =>
+         ingredient.toLowerCase().includes(query)
+      );
+
+      return nameFound || tagFound || ingredientFound;
+   });
+}
+
+/****************************************
+ * SORT LIST
+ * @param {*} a 1st list item we are comparing
+ * @param {*} b 2nd list item we are comparing
+ * @returns comparison result
+ ***************************************/
+function sortList(a, b) {
+   const nameA = a.name.toLowerCase();
+   const nameB = b.name.toLowerCase();
+   if (nameA < nameB) {
+      return -1;
+   } else if (nameA > nameB) {
+      return 1;
+   } else {
+      return 0;
+   }
+}
+
+/****************************************
+ * FILTER
+ * @param {*} query
+ * @returns filtered list in alphabetical order
+ ***************************************/
+function filter(query) {
+   // find user query matches
+   const filtered = filterList(query);
+
+   // sort by name
+   const sorted = filtered.sort(sortList);
+   return sorted;
+}
+
+/***********************************
+ * SEARCH HANDLER
+ * @param {*} event
+ **********************************/
+function searchHandler(event) {
+   // prevent page reload
+   event.preventDefault();
+
+   // get search text
+   const query = document.querySelector("#searchText").value.toLowerCase();
+
+   // filter the recipes
+   const matches = filter(query);
+
+   // render the filtered list
+   renderRecipes(matches);
+}
+
+/**************************************************************************
  *************************** RENDERING ************************************
  *************************************************************************/
 
+/**************************
+ * RENDER RECIPES
+ * @param {*} recipeList
+ *************************/
 function renderRecipes(recipeList) {
    // get the element we will output the recipes into
-   const recipe = document.querySelector("main");
+   const recipes = document.querySelector("main");
+
    // use the recipeTemplate function to transform our recipe objects into recipe HTML strings
-   const html = recipeTemplate(recipeList);
+   const html = recipeList.map(recipeTemplate).join("");
+
    // Set the HTML strings as the innerHTML of our output element.
-   recipe.innerHTML = html;
+   recipes.innerHTML = html;
 }
 
+/********************
+ * INITIALIZE
+ *******************/
 function init() {
    // get a random recipe
    const recipe = getRandomEntry(recipes);
+
    // render the recipe with renderRecipes.
-   renderRecipes(recipe);
+   renderRecipes([recipe]);
 }
+
+// Listen for user clicking the searchBar
+document
+   .querySelector("#searchButton")
+   .addEventListener("click", searchHandler);
+
 init();
-
-/**************************************************************************
- *************************** TESTING **************************************
- *************************************************************************/
-
-// test
-//console.log(getRandomEntry(recipes));
-const recipe = getRandomEntry(recipes);
-//console.log(recipeTemplate(recipe));
