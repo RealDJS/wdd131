@@ -8,7 +8,7 @@
       <meta name="description" content="A site to share favorite recipes" />
       <meta name="author" content="Dennis Skoy" />
       <link rel="stylesheet" href="recipes.css" />
-      <script src="main.js" defer></script>
+      <script src="main.js" type="module"></script>
 
       <!-- Social Media Meta Info -->
       <meta property="og:title" content="RecipeBook" />
@@ -28,7 +28,7 @@
    <!-- SITE CONTENT -->
    <body>
       <div class="content">
-         <!--------------------------HEADER-------------------------------------------------------->
+         <!--------------------------HEADER--------------------------------------->
          <header>
             <div class="logo">
                <a href="#"
@@ -46,48 +46,16 @@
                      name="searchText"
                      placeholder="Find a recipe"
                   />
-                  <button type="submit">
+                  <button type="submit" id="searchButton">
                      <img src="images/search.svg" alt="Search" />
                   </button>
                </div>
             </form>
          </header>
-         <!--------------------------MAIN---------------------------------------------------------->
-         <main>
-            <!---------------------- Recipe --------------------->
-            <div class="recipeContainer">
-               <!-- Recipe Img -->
-               <img
-                  class="recipeImg"
-                  src="images/apple-crisp.jpg"
-                  alt="apple-crisp"
-               />
+         <!--------------------------MAIN----------------------------------------->
+         <main></main>
 
-               <!-- Recipe info -->
-               <div class="recipeInfo">
-                  <div class="tags">dessert</div>
-                  <h2 class="recipeName">Apple Crisp</h2>
-                  <span
-                     class="rating"
-                     role="img"
-                     aria-label="Rating: 4 out of 5 stars"
-                  >
-                     <span aria-hidden="true" class="icon-star">⭐</span>
-                     <span aria-hidden="true" class="icon-star">⭐</span>
-                     <span aria-hidden="true" class="icon-star">⭐</span>
-                     <span aria-hidden="true" class="icon-star">⭐</span>
-                     <span aria-hidden="true" class="icon-star-empty">☆</span>
-                  </span>
-
-                  <p class="recipeDescription">
-                     This apple crisp recipe is a simple yet delicious fall
-                     dessert that's great served warm with vanilla ice cream.
-                  </p>
-               </div>
-            </div>
-         </main>
-
-         <!--------------------------FOOTER-------------------------------------------------------->
+         <!--------------------------FOOTER------------------------------------->
          <footer>
             <!--Credit flaticon  -->
             <div class="social">
