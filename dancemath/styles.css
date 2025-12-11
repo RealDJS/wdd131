@@ -1,0 +1,98 @@
+:root {
+   --primary-color: #042a62; /* Navy */
+   --secondary-color: #f67451; /* Coral */
+   --accent1-color: #5db7de; /* Light Blue */
+   --accent2-color: #f1e9db; /* Off-white */
+
+   --heading-font: Tahoma, Verdana, sans-serif;
+   --paragraph-font: Geneva, Verdana, sans-serif;
+}
+/*****************************************/
+/***************** HEADER ****************/
+/*****************************************/
+
+header {
+   background-color: var(--primary-color);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px;
+}
+
+#logo {
+   max-width: 100px;
+   height: auto;
+}
+
+nav a {
+   color: var(--accent2-color);
+   text-decoration: none;
+   font-size: 1.2rem;
+   margin-left: 20px;
+   font-family: var(--heading-font);
+}
+
+nav a:hover {
+   color: var(--secondary-color);
+}
+
+/*****************************************/
+/***************** BODY ******************/
+/*****************************************/
+
+/* Typography */
+h1,
+h2,
+h3 {
+   font-family: var(--heading-font);
+   color: var(--primary-color);
+}
+
+body {
+   background-color: var(--accent2-color);
+   font-family: var(--paragraph-font);
+   color: var(--primary-color);
+   margin: 0;
+   padding: 0;
+}
+
+main {
+   padding: 2rem;
+}
+
+/*****************************************/
+/**************** FOOTER *****************/
+/*****************************************/
+footer {
+   background-color: var(--primary-color);
+   color: var(--accent2-color);
+   text-align: center;
+   padding: 20px;
+   margin-top: 40px;
+}
+
+/*****************************************/
+/**************** HOME PAGE **************/
+/*****************************************/
+main section {
+   /*text-align: center;*/
+   padding: 0 4rem;
+}
+
+/******************************************/
+/**************** UUS SYSTEM **************/
+/******************************************/
+.system {
+   display: flex;
+   flex: row;
+   justify-content: space-between;
+   align-items: center;
+}
+.system h2 {
+   width: 50rem;
+   /*padding: */
+}
+
+.system p {
+   padding: 1rem;
+}
