@@ -57,6 +57,7 @@ body {
 main {
    max-width: 1080px;
    padding: 2rem;
+   /*align-self: center;*/
 }
 
 /*****************************************/
@@ -82,7 +83,6 @@ main section {
 /**************** UUS SYSTEM **************/
 /******************************************/
 .system {
-   /* Switch to Grid */
    display: grid;
    grid-template-columns: 30% 1fr;
    gap: 20px;
