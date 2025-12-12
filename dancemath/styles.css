@@ -3,6 +3,7 @@
    --secondary-color: #f67451; /* Coral */
    --accent1-color: #5db7de; /* Light Blue */
    --accent2-color: #f1e9db; /* Off-white */
+   --paragraph-color: black;
 
    --heading-font: Tahoma, Verdana, sans-serif;
    --paragraph-font: Geneva, Verdana, sans-serif;
@@ -10,7 +11,6 @@
 /*****************************************/
 /***************** HEADER ****************/
 /*****************************************/
-
 header {
    background-color: var(--primary-color);
    display: flex;
@@ -39,8 +39,6 @@ nav a:hover {
 /*****************************************/
 /***************** BODY ******************/
 /*****************************************/
-
-/* Typography */
 h1,
 h2,
 h3 {
@@ -51,12 +49,13 @@ h3 {
 body {
    background-color: var(--accent2-color);
    font-family: var(--paragraph-font);
-   color: var(--primary-color);
+   color: var(--paragraph-color);
    margin: 0;
    padding: 0;
 }
 
 main {
+   max-width: 1080px;
    padding: 2rem;
 }
 
@@ -83,16 +82,60 @@ main section {
 /**************** UUS SYSTEM **************/
 /******************************************/
 .system {
-   display: flex;
-   flex: row;
-   justify-content: space-between;
-   align-items: center;
-}
-.system h2 {
-   width: 50rem;
-   /*padding: */
+   /* Switch to Grid */
+   display: grid;
+   grid-template-columns: 30% 1fr;
+   gap: 20px;
+   align-items: start; /* ensures the text aligns with header */
+   margin-bottom: 2rem;
+   padding-bottom: 1rem;
+   border-bottom: 1px solid #ccc; /* adds a line between sections */
 }
 
-.system p {
-   padding: 1rem;
+.system h2 {
+   margin-top: 0;
+   padding: 0;
+}
+
+.system .text-content {
+   margin-top: 0;
+   max-width: 40rem;
+}
+
+/********************************************/
+/**************** RHYTHM UNITS **************/
+/********************************************/
+
+#rhythms-container {
+   display: grid;
+   grid-template-columns: 30px 420px 1fr;
+
+   align-items: center;
+   gap: 15px;
+   max-width: 1000px;
+   margin: 2rem auto;
+}
+
+.rhythm-img {
+   justify-self: center;
+   max-width: 50%;
+}
+
+#rhythms-container h3:nth-of-type(2) {
+   text-align: center;
+}
+
+/* remove default margins for perfectly straight alignment */
+#rhythms-container h4,
+#rhythms-container p {
+   margin: 0;
+}
+
+/******************************************/
+/**************** SCALING ** **************/
+/******************************************/
+@media (max-width: 600px) {
+   .system {
+      grid-template-columns: 1fr;
+   }
 }
