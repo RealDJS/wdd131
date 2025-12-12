@@ -14,6 +14,7 @@
 header {
    background-color: var(--primary-color);
    display: flex;
+   flex-direction: column;
    justify-content: space-between;
    align-items: center;
    padding: 20px;
@@ -22,6 +23,10 @@ header {
 #logo {
    max-width: 100px;
    height: auto;
+}
+
+nav {
+   width: 100%;
 }
 
 nav a {
@@ -58,6 +63,7 @@ main {
    max-width: 1080px;
    padding: 2rem;
    /*align-self: center;*/
+   margin: 0 auto;
 }
 
 /*****************************************/
@@ -71,9 +77,12 @@ footer {
    margin-top: 40px;
 }
 
-/*****************************************/
-/**************** HOME PAGE **************/
-/*****************************************/
+/**************************************************************/
+/**************************************************************/
+/*************************** HOME PAGE ************************/
+/**************************************************************/
+/**************************************************************/
+
 main section {
    /*text-align: center;*/
    padding: 0 4rem;
@@ -125,14 +134,106 @@ main section {
    text-align: center;
 }
 
-/* remove default margins for perfectly straight alignment */
 #rhythms-container h4,
 #rhythms-container p {
-   margin: 0;
+   margin: 0; /* remove default margins for perfectly straight alignment */
+}
+
+/**************************************************************/
+/**************************************************************/
+/************************** CREATE PAGE ***********************/
+/**************************************************************/
+/**************************************************************/
+
+/******************************************/
+/**************** SEQUENCE ****************/
+/******************************************/
+#workspace {
+   display: grid;
+   grid-template-columns: 3fr 1fr; /* 70% for sequence, 30% for stats */
+   gap: 20px;
+   padding: 20px;
+   max-width: 1000px;
+   margin: 0 auto;
+}
+
+#sequence-grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr); /* forces 4 items per row */
+   gap: 10px;
+   min-height: 150px;
+   background-color: white;
+   padding: 10px;
+   border: 1px solid #ccc;
+}
+
+.seq-item img {
+   width: 100%;
+   height: auto;
+   display: block;
+   border: 1px solid #000;
 }
 
 /******************************************/
-/**************** SCALING ** **************/
+/**************** CONTROLS ****************/
+/******************************************/
+
+#controls-area {
+   text-align: center;
+   padding: 20px;
+   border-bottom: 2px solid #ccc;
+}
+
+#controls-area button {
+   padding: 10px 20px;
+   margin: 0 10px;
+   font-size: 1rem;
+   cursor: pointer;
+   border-radius: 20px;
+   border: 2px solid black;
+   background-color: white;
+}
+
+#controls-area button:hover {
+   background-color: #eee;
+}
+
+/******************************************/
+/**************** SELECT GRID *************/
+/******************************************/
+#rhythm-select {
+   text-align: center;
+   padding: 20px;
+}
+
+.selector-grid {
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+}
+
+.rhythm-btn {
+   cursor: pointer;
+   border: 2px solid var(--primary-color);
+   border-radius: 8px;
+   padding: 10px;
+   transition: transform 0.2s;
+   background-color: white;
+}
+
+.rhythm-btn img {
+   height: 80px; /* keeps buttons smaller than main display */
+   display: block;
+   margin-bottom: 5px;
+}
+
+.rhythm-btn:hover {
+   transform: scale(1.05); /* slight pop-up effect when hovering */
+   background-color: var(--accent1-color);
+}
+
+/******************************************/
+/**************** SCALING *****************/
 /******************************************/
 @media (max-width: 600px) {
    .system {

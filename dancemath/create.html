@@ -28,16 +28,79 @@
                /></a>
             </div>
             <nav class="menu">
-               <ul>
-                  <a href="index.html">Home</a>
-                  <a href="create.html">Create</a>
-               </ul>
+               <a href="index.html">Home</a>
+               <a href="create.html">Create</a>
             </nav>
          </header>
+
          <!-- MAIN -->
          <main>
-            <div class="rhythmCombo"></div>
+            <!-- CREATE RHYTHMS -->
+            <section id="workspace">
+               <div id="sequence-display">
+                  <h2>Your Sequence</h2>
+                  <div id="sequence-grid">
+                     <div class="seq-item">
+                        <img src="images/single.png" alt="Single" />
+                     </div>
+                     <div class="seq-item">
+                        <img src="images/double.png" alt="Double" />
+                     </div>
+                     <div class="seq-item">
+                        <img src="images/triple.png" alt="Triple" />
+                     </div>
+                     <div class="seq-item">
+                        <img src="images/single.png" alt="Single" />
+                     </div>
+                  </div>
+               </div>
+
+               <!-- STATS -->
+               <aside id="stats-panel">
+                  <h3>Stats</h3>
+                  <!-- HEADERS -->
+                  <div class="stat-row">
+                     <span>Weight Changes</span>
+                     <span>Actions</span>
+                  </div>
+                  <!-- DATA -->
+                  <div class="stat-row">
+                     <span id="weight-count">XX</span>
+                     <span id="non-weight-count">XX</span>
+                  </div>
+                  <hr />
+                  <!-- TOTALS -->
+                  <div class="stat-row total">
+                     <span>Total:</span>
+                     <span id="total-weight-count">XX</span>
+                     <span id="total-action-count">XX</span>
+                  </div>
+               </aside>
+            </section>
+
+            <!-- CONTROLS -->
+            <section id="controls-area">
+               <button id="remove-btn">Remove Last Unit</button>
+               <button id="reset-btn">Reset</button>
+            </section>
+
+            <!-- SELECT RHYTHMS -->
+            <section id="rhythm-select">
+               <h1>Select</h1>
+               <div class="selector-grid">
+                  <div class="rhythm-btn" data-rhythm="single">
+                     <img src="images/single.png" alt="Single" />
+                  </div>
+                  <div class="rhythm-btn" data-rhythm="double">
+                     <img src="images/double.png" alt="Double" />
+                  </div>
+                  <div class="rhythm-btn" data-rhythm="triple">
+                     <img src="images/triple.png" alt="Triple" />
+                  </div>
+               </div>
+            </section>
          </main>
+
          <!-- FOOTER -->
          <footer>
             <p>Dance Math &copy; 2025 - Dennis Skoy</p>
