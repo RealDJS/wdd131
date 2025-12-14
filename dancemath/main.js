@@ -1,8 +1,8 @@
 import { rhythms } from "./rhythms.mjs";
 
 /**************************************************************************
- *************************** HOME TEMPLATES *****************************
- *************************************************************************/
+ *************************** HOME TEMPLATES *******************************
+ **************************************************************************/
 
 /**************************************
  * RHYTHM IMAGE TEMPLATE
@@ -10,10 +10,8 @@ import { rhythms } from "./rhythms.mjs";
  * @returns {string} The HTML image string
  *************************************/
 function rhythmImageTemplate(rhythm) {
-   return `<img class="rhythm-img"
-            src="${rhythm.img}" 
-            alt="${rhythm.name} rhythm unit in UUS notation" />
-            `;
+   return `<img src="${rhythm.img}" 
+            alt="${rhythm.name} rhythm unit in UUS notation" /> `;
 }
 
 /**************************************
@@ -48,21 +46,13 @@ function rhythmInfoTemplate() {
 
 /**************************************************************************
  *************************** CREATE TEMPLATES *****************************
- *************************************************************************/
+ **************************************************************************/
 
 /**************************************
- * RHYTHM TEMPLATE
- * @param {*} rhythm
- * @returns rhythm template
+ * UNIT TEMPLATE
+ * @param {*} RHYTHM
+ * @returns rhythm unit
  *************************************/
-function rhythmSelectTemplate(rhythm) {
-   return (
-      ` <div class="rhythm-btn" ` +
-      rhythmImageTemplate(rhythm) +
-      `              
-            </div>`
-   );
-}
 
 /**************************************
  * ROW TEMPLATE
@@ -79,12 +69,28 @@ function rowTemplate(rhythms) {}
 function gridTemplate(rhythms) {}
 
 /**************************************
- * SELECT TEMPLATE
- * @param {*} rhythms
- * @returns rhythm select template
+ * RHYTHM-SELECT TEMPLATE
+ * @param {*} rhythm
+ * @returns rhythm-select template
  *************************************/
+function rhythmSelectTemplate() {
+   const container = document.getElementById("rhythm-select");
 
-//function rhythmSelectTemplate(rhythms) {}
+   if (container) {
+      let html = `   <h1>Select</h1>
+                     <div class="selector-grid">`;
+      // 3. Add all rhythm objects
+      for (let i = 0; i < rhythms.length; i++) {
+         const rhythmUnit = rhythms[i];
+         html +=
+            ` <div class="rhythm-btn" > ` +
+            rhythmImageTemplate(rhythmUnit) +
+            `</div>`; // image
+      }
+      html += `</div>`;
+      container.innerHTML = html;
+   }
+}
 
 function initialize() {
    // Check if we are on the home page which contains the 'rhythms-grid' element
@@ -92,6 +98,9 @@ function initialize() {
       rhythmInfoTemplate();
    }
    // Add any other initializations for 'create.html' or other pages here later
+   if (document.getElementById("rhythm-select")) {
+      rhythmSelectTemplate();
+   }
 }
 
 initialize();

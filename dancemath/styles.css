@@ -124,7 +124,7 @@ main section {
    margin: 2rem auto;
 }
 
-.rhythm-img {
+#rhythms-container img {
    justify-self: center;
    max-width: 50%;
 }
@@ -172,7 +172,6 @@ main section {
 }
 
 .seq-item {
-   /*padding: 10px;*/
    cursor: pointer;
 }
 
