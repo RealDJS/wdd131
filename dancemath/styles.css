@@ -84,7 +84,6 @@ footer {
 /**************************************************************/
 
 main section {
-   /*text-align: center;*/
    padding: 0 4rem;
 }
 
@@ -130,11 +129,11 @@ main section {
    max-width: 50%;
 }
 
-#rhythms-container h3:nth-of-type(2) {
+#rhythms-container h2:nth-of-type(2) {
    text-align: center;
 }
 
-#rhythms-container h4,
+#rhythms-container h3,
 #rhythms-container p {
    margin: 0; /* remove default margins for perfectly straight alignment */
 }

@@ -1,6 +1,6 @@
-const rhythms = [
+export const rhythms = [
    {
-      name: "single",
+      name: "Single",
       img: "images/single.png",
       description:
          "One weight change in 2 beats. (You step on beat 1, and wait on beat 2)",
@@ -8,7 +8,7 @@ const rhythms = [
       actions: 2,
    },
    {
-      name: "double",
+      name: "Double",
       img: "images/double.png",
       description:
          "Two weight changes in 2 beats. (You step on beat 1, and step on beat 2)",
@@ -16,7 +16,7 @@ const rhythms = [
       actions: 2,
    },
    {
-      name: "triple",
+      name: "Triple",
       img: "images/triple.png",
       description:
          "Three weight changes in 2 beats. (You step on 1, step in between, and step on 2)",
