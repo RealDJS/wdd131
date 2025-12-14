@@ -1,5 +1,27 @@
 import { rhythms } from "./rhythms.mjs";
 
+const startSequence = [
+   rhythms[0],
+   rhythms[1],
+   rhythms[2],
+   rhythms[0],
+   rhythms[0],
+   rhythms[1],
+   rhythms[2],
+   rhythms[0],
+];
+
+let currentSequence = [
+   rhythms[0],
+   rhythms[1],
+   rhythms[2],
+   rhythms[0],
+   rhythms[0],
+   rhythms[1],
+   rhythms[2],
+   rhythms[0],
+];
+
 /**************************************************************************
  *************************** HOME TEMPLATES *******************************
  **************************************************************************/
@@ -19,29 +41,19 @@ function rhythmImageTemplate(rhythm) {
  * @returns {string} The rhythm-info html string
  *************************************/
 function rhythmInfoTemplate() {
-   // 1. Get the container where the rhythms will go
-   const container = document.getElementById("rhythms-container");
-
-   // 2. Add content to existing container
-   if (container) {
-      let html = `<h2 class = "rhythmHeader">Name           </h2>
+   let html = `<h2 class = "rhythmHeader">Name           </h2>
                   <h2 class = "rhythmHeader">Rhythm Notation</h2>
                   <h2 class = "rhythmHeader">Description    </h2>`;
 
-      // 3. Add all rhythm objects
-      for (let i = 0; i < rhythms.length; i++) {
-         const rhythmUnit = rhythms[i];
-
-         // 4. Generate current rhythm html
-         html +=
-            `<h3>${rhythmUnit.name}</h3>` + // name
-            rhythmImageTemplate(rhythmUnit) + // image
-            `<p>${rhythmUnit.description}</p>`; // description
-      }
-
-      // 5. Insert HTML into container
-      container.innerHTML = html;
-   }
+   // Generate current rhythm html
+   const rhythmRows = rhythms.map((rhythmUnit) => {
+      return (
+         `<h3>${rhythmUnit.name}</h3>` +
+         rhythmImageTemplate(rhythmUnit) +
+         `<p>${rhythmUnit.description}</p>`
+      );
+   });
+   return html + rhythmRows.join("");
 }
 
 /**************************************************************************
@@ -49,24 +61,32 @@ function rhythmInfoTemplate() {
  **************************************************************************/
 
 /**************************************
- * UNIT TEMPLATE
- * @param {*} RHYTHM
- * @returns rhythm unit
- *************************************/
-
-/**************************************
  * ROW TEMPLATE
  * @param {*} rhythms
- * @returns row template
+ * @returns row template with up to 4 items
  *************************************/
-function rowTemplate(rhythms) {}
+function rowTemplate(rowUnits) {
+   const rowItems = rowUnits.map((unit) => {
+      return `<div class = "seq-item"> ` + rhythmImageTemplate(unit) + `</div>`;
+   });
+
+   return `<div class="seq-row">${rowItems.join("")}</div>`;
+}
 
 /**************************************
- * GRID TEMPLATE
+ * SEQUENCE-GRID TEMPLATE
  * @param {*} rhythms
- * @returns grid template
+ * @returns sequence-grid template
  *************************************/
-function gridTemplate(rhythms) {}
+function sequenceGridTemplate(selectRhythms) {
+   let html = ``;
+
+   for (let i = 0; i < selectRhythms.length; i += 4) {
+      const rowChunk = selectRhythms.slice(i, i + 4);
+      html += rowTemplate(rowChunk);
+   }
+   return html;
+}
 
 /**************************************
  * RHYTHM-SELECT TEMPLATE
@@ -74,33 +94,71 @@ function gridTemplate(rhythms) {}
  * @returns rhythm-select template
  *************************************/
 function rhythmSelectTemplate() {
-   const container = document.getElementById("rhythm-select");
+   let html = `   <h1>Select</h1>
+                  <div class="selector-grid">`;
 
+   // Add all rhythm objects
+   const rhythmSelect = rhythms.map((rhythmUnit) => {
+      return (
+         ` <div class="rhythm-btn" > ` +
+         rhythmImageTemplate(rhythmUnit) + // image
+         `</div>`
+      );
+   });
+
+   return html + rhythmSelect.join("") + `</div>`;
+}
+
+/******************************
+ * ADD UNIT
+ *
+ ******************************/
+function addUnit(rhythm) {}
+
+/******************************
+ * RENDER SEQUENCE
+ * Finds the #sequence-grid and fills it with the default sequence
+ ******************************/
+function renderSequence() {
+   const container = document.getElementById("sequence-grid");
+
+   // Insert the generated HTML into the container
    if (container) {
-      let html = `   <h1>Select</h1>
-                     <div class="selector-grid">`;
-      // 3. Add all rhythm objects
-      for (let i = 0; i < rhythms.length; i++) {
-         const rhythmUnit = rhythms[i];
-         html +=
-            ` <div class="rhythm-btn" > ` +
-            rhythmImageTemplate(rhythmUnit) +
-            `</div>`; // image
-      }
-      html += `</div>`;
-      container.innerHTML = html;
+      container.innerHTML = sequenceGridTemplate(currentSequence);
    }
 }
 
-function initialize() {
+/******************************
+ * RENDER SEQUENCE MAKER
+ *
+ ******************************/
+function renderSequenceMaker() {
+   const container = document.getElementById("rhythm-select");
+
+   container.innerHTML = rhythmSelectTemplate();
+}
+
+/******************************
+ * RENDER RHYTHM INFO
+ ******************************/
+function renderRhythmInfo() {
+   const container = document.getElementById("rhythms-container");
+   container.innerHTML = rhythmInfoTemplate();
+}
+
+/**************************************
+ * INITIALIZE
+ *************************************/
+function init() {
    // Check if we are on the home page which contains the 'rhythms-grid' element
    if (document.getElementById("rhythms-container")) {
-      rhythmInfoTemplate();
+      renderRhythmInfo();
    }
    // Add any other initializations for 'create.html' or other pages here later
    if (document.getElementById("rhythm-select")) {
-      rhythmSelectTemplate();
+      renderSequenceMaker();
+      renderSequence();
    }
 }
 
-initialize();
+init();
